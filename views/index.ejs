@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Search Abstraction Layer</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h2 class="text-center"><code>Image Search API</code></h2>
+  </header>
+
+	<div class="container">
+    <section>
+      <h4><code><em>Usage: </em></code></h4>
+      <ul>
+        <li>Get all image searches -
+          <code>http://localhost:3000/api/?q=<em>{query}</em>&offset=<em>{number}</em></code>
+          <p>Replace <code>{query}</code> with actual image query and <code>{offset}</code>
+              with page number.
+          </p>
+          <br>
+          <b>Example: </b>
+            <code>http://localhost:3000/api/q=dog</code>
+            <p>The above request returns following response</p>
+            <pre>
+            [
+                {
+                    "url": "https://cdn.pixabay.com/photo/2016/10/15/12/01/dog-1742295__340.jpg",
+                    "alt": "Dog, Weimaraner, Portrait, Remote Access",
+                    "page": "https://pixabay.com/en/dog-weimaraner-portrait-1742295/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2013/10/15/08/20/dog-195877__340.jpg",
+                    "alt": "Dog, Yorkshire Terrier, Lazy Dog",
+                    "page": "https://pixabay.com/en/dog-yorkshire-terrier-lazy-dog-195877/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2013/11/23/02/17/dog-216282__340.jpg",
+                    "alt": "Dog, Yorkshire Terrier, Small Dog",
+                    "page": "https://pixabay.com/en/dog-yorkshire-terrier-small-dog-216282/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2016/02/20/17/05/dog-1212400__340.jpg",
+                    "alt": "Dog, Water, Run, Movement, Joy",
+                    "page": "https://pixabay.com/en/dog-water-run-movement-joy-1212400/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267__340.jpg",
+                    "alt": "Dog, Model, French Bulldog, View",
+                    "page": "https://pixabay.com/en/dog-model-french-bulldog-view-1224267/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2016/05/02/14/13/dog-1367297__340.jpg",
+                    "alt": "Dog, Action, Hunt, Ball",
+                    "page": "https://pixabay.com/en/dog-action-hunt-ball-1367297/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2015/12/10/11/42/dog-1086286__340.jpg",
+                    "alt": "Dog, Viszla, Close",
+                    "page": "https://pixabay.com/en/dog-viszla-close-1086286/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2014/04/10/10/27/yorkshire-terrier-320833__340.jpg",
+                    "alt": "Yorkshire Terrier, Dog, Small Dog",
+                    "page": "https://pixabay.com/en/yorkshire-terrier-dog-small-dog-320833/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2015/11/17/13/13/bulldog-1047518__340.jpg",
+                    "alt": "Bulldog, Puppy, Dog, Pet, Sweet",
+                    "page": "https://pixabay.com/en/bulldog-puppy-dog-pet-sweet-1047518/"
+                },
+                {
+                    "url": "https://cdn.pixabay.com/photo/2015/11/03/12/58/dog-1020790__340.jpg",
+                    "alt": "Dog, Dalmatians, Pet, Dog Breed",
+                    "page": "https://pixabay.com/en/dog-dalmatians-pet-dog-breed-1020790/"
+                }
+            ]
+            </pre>
+        </li><br>
+        <li>
+          Get Recent Searches -
+          <code>
+            http://localhost:3000/api/recent
+          </code><br>
+          <b>Example: </b>
+          <p>Above request returns following response</p>
+          <pre>
+[
+    {
+        "query": "dog",
+        "when": "Tue Sep 12 2017 16:21:12 GMT+0530 (India Standard Time)"
+    },
+    {
+        "query": "iron",
+        "when": "Tue Sep 12 2017 16:34:31 GMT+0530 (India Standard Time)"
+    },
+    {
+        "query": "cat",
+        "when": "Tue Sep 12 2017 17:10:29 GMT+0530 (India Standard Time)"
+    },
+    {
+        "query": "banana",
+        "when": "Tue Sep 12 2017 17:10:37 GMT+0530 (India Standard Time)"
+    }
+]
+          </pre>
+        </li>
+      </ul>
+    </section>
+    <br>
+    <hr>
+    <footer>
+      Developed by <code><a href="https://www.freecodecamp.org/harshtomar6" target="_blank">Harsh Tomar</a></code>
+    </footer>
+    <br>
+	</div>
+
+</body>
+</html>
